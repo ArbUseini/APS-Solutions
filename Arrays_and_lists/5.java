@@ -9,19 +9,16 @@ public class Main{
         }
 
         System.out.println(sll);
-        
+
         SLLNode<String> node = sll.getFirst();
         int len = cin.nextInt();
 
         for (int i = 0; i < n; i++){
             if (node.element.length() == len){
-                SLLNode<String> tmp = node.succ;
                 sll.insertLast(node.element);
                 sll.delete(node);
-                node = tmp;
-            }else{
-                node = node.succ;
             }
+            node = node.succ;
         }
 
         System.out.println(sll);

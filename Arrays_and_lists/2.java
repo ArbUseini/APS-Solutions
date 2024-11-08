@@ -10,19 +10,15 @@ public class Main{
         }
 
         System.out.println(sll);
-        
+
         SLLNode<String> node =  sll.getFirst();
         int len = cin.nextInt();
 
         while (node != null){
             if (node.element.length() < len){
-                SLLNode<String> tmp = node.succ;
                 sll.delete(node);
-                node = tmp;
             }
-            else{
-                node = node.succ;
-            }
+            node = node.succ;
         }
 
         System.out.println(sll);

@@ -7,29 +7,12 @@ public class Main{
         for (int i = 0; i < n; i++){
             dll.insertLast(cin.nextInt());
         }
-        
-        DLLNode<Integer> before = dll.getFirst();
-        DLL<Integer> dll2 = new DLL<Integer>();
 
-        int shift = cin.nextInt()%n;
-
-        if (n==0 || n==1) {
-            System.out.println(dll);
-            return;
+        for (int k = cin.nextInt()%n; k > 0; k--){
+            dll.insertLast(dll.getFirst().element);
+            dll.deleteFirst();
         }
 
-        for (int i = 0; i < shift; i++){
-            before = before.succ;
-        }
-
-        for (int i = 0; i < n; i++){
-            if (before == null){
-                before = dll.getFirst();
-            }
-            dll2.insertLast(before.element);
-            before = before.succ;
-        }
-
-        System.out.println(dll2);
+        System.out.println(dll);
     }
 }
